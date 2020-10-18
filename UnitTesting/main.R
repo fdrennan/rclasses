@@ -45,6 +45,7 @@ build_model <- function(df = NULL, x = NULL , y = NULL) {
 # Libraries ---------------------------------------------------------------
 
 
+library(nycflights13)
 library(dplyr)
 library(magrittr)
 library(forcats)
@@ -52,6 +53,7 @@ library(glue)
 
 # 1. Create a function which converts columns to factors
 # 2. Prevent NA's from being allowed in column
+
 
 cars <- as_tibble(mtcars)
 # cars['am'][1:5,][[1]] = NA
