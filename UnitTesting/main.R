@@ -1,4 +1,4 @@
-# Libraries ---------------------------------------------------------------
+# Libraries --------------------------------------------------------------
 library(UnitTesting)
 library(caret)
 
@@ -12,5 +12,3 @@ model_table <- table(model_output)
 model_summary <- confusionMatrix(model_table)
 
 model_summary
-
-

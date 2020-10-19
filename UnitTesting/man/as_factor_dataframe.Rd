@@ -14,3 +14,8 @@ as_factor_dataframe(df = NULL, columns = NULL)
 \description{
 Converts columns in a dataframe to factors
 }
+\examples{
+
+as_factor_dataframe(model_results_df, c('pred', 'actual'))
+
+}

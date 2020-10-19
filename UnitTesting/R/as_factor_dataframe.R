@@ -5,6 +5,10 @@
 #' @importFrom dplyr all_of
 #' @importFrom magrittr  %>%
 #' @importFrom magrittr not
+#' @examples
+#'
+#' as_factor_dataframe(model_results_df, c('pred', 'actual'))
+#'
 #' @param df A dataframe to perform the operation on
 #' @param columns The columns you wish to convert to factors
 #' @export as_factor_dataframe
