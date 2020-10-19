@@ -42,25 +42,61 @@ build_model <- function(df = NULL, x = NULL , y = NULL) {
   glm(model_form, data = df, family=binomial(link="logit"))
 }
 
+#' build_model_workbook
+#' @importFrom openxlsx createWorkbook
+#' @importFrom openxlsx addWorksheet
+#' @importFrom openxlsx writeDataTable
+#' @importFrom openxlsx insertPlot
+#' @importFrom openxlsx saveWorkbook
+#' @export build_model_workbook
+build_model_workbook <- function(df) {
+  wb <- createWorkbook()
+
+  addWorksheet(wb, sheetName = 'cars')
+  writeDataTable(wb, sheet = 'cars', x = df,
+                 colNames = TRUE, rowNames = TRUE)
+
+  addWorksheet(wb, sheetName = 'plot')
+  insertPlot(wb, 'plot', xy=c("B", 16))
+
+  saveWorkbook(wb, "model_output.xlsx", overwrite = TRUE)
+}
+
 # Libraries ---------------------------------------------------------------
 
 
-library(nycflights13)
-library(dplyr)
 library(magrittr)
 library(forcats)
+library(dplyr)
 library(glue)
+library(broom)
+library(ggplot2)
+library(openxlsx)
+
 
 # 1. Create a function which converts columns to factors
 # 2. Prevent NA's from being allowed in column
+cars_input <- as_tibble(mtcars)
 
-
-cars <- as_tibble(mtcars)
-# cars['am'][1:5,][[1]] = NA
-cars <- as_factor_dataframe(df = cars, columns = c('cyl', 'vs', 'am', 'gear', 'carb'))
+cars_input <- as_factor_dataframe(
+  df = cars_input,
+  columns = c('cyl', 'vs', 'am', 'gear', 'carb')
+)
 
 # Run Model ---------------------------------------------------------------
-cars_model <- build_model(cars, y = 'carb', x = 'am')
-print(summary(cars_model))
+cars_model <- build_model(cars_input, y = 'carb', x = 'am')
 
+# Make a Plot
+p <-
+  ggplot(cars_input, aes(x = mpg, y = wt)) +
+  geom_point()
+
+# Store Data --------------------------------------------------------------
+excel_data <- list(
+  data = cars_input,
+  summary_data = tidy(cars_model),
+  augment_lm = augment(cars_model)
+)
+
+build_model_workbook(df = excel_data)
 
