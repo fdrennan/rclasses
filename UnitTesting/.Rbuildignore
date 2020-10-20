@@ -4,3 +4,4 @@
 ^\.Rproj\.user$
 main.R
 testexamples
+^README\.Rmd$
