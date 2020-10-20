@@ -70,6 +70,11 @@ the R version required to run the package.
 Do not touch, let `roxygen2` update this file for you. When creating a new package,
 delete the existing `NAMESPACE` file and let `roxygen2` create it. 
 
+#### `LICENSE` [file]
+
+This file specifies the allowed use of the package. I have set up a template
+license for an BioMarin proprietary package in`DESCRIPTION` and `LICENSE`.
+
 #### `R` [folder]
 
 This is where all of your functions will be stored. I prefer storing one function 

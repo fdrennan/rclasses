@@ -5,3 +5,5 @@
 main.R
 testexamples
 ^README\.Rmd$
+.env
+images
