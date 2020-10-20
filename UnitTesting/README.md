@@ -34,6 +34,13 @@ is a good file to add to your `.gitignore` file*.
 Passwords and usernames should *never* be directly written into your
 code.
 
+#### `.Rbuildignore` \[file\]
+
+File paths added to this directory will ignored by package build
+scripts. When running `Check` on your package, non-standard files in a
+package directory will give a warning. To suppress the warning,
+explicity specify which files should be ignored.
+
 #### `renv.lock` \[file\]
 
 A singular file which will restore the environment in which a project
@@ -66,11 +73,20 @@ delete this folder and it is no big deal. `roxygen2` will recreate the
 folder each time you call `devtools::document()` or `Install and
 Restart`.
 
+#### `main.R` \[file\]
+
+This is not a file that comes standard in a package. I add this file to
+my `.Rbuildignore` file. I like having a `main.R` file to use as a
+template/scratch area while developing.
+
 # Setting up Documentation
 
 For documentation to be created using `Install and Restart` you must
 
 1.  Make sure `roxygen2` is installed.
 2.  Go to `Tools` \> `Project Options`
-3.  Make sure everything is checked and written as in the image [Project
-    Example](images/package_opts.png)
+3.  Make sure everything is checked and written as in the image
+
+[Project Example](./images/package_opts.png)
+
+# Unit Testing
