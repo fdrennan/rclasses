@@ -87,6 +87,6 @@ For documentation to be created using `Install and Restart` you must
 2.  Go to `Tools` \> `Project Options`
 3.  Make sure everything is checked and written as in the image
 
-[Project Example](./images/package_opts.png)
+[Project Example](images/package_opts.png)
 
 # Unit Testing
