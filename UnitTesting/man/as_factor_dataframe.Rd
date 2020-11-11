@@ -19,3 +19,8 @@ Converts columns in a dataframe to factors
 as_factor_dataframe(model_results_df, c('pred', 'actual'))
 
 }
+\seealso{
+Other tutorial: 
+\code{\link{model_results_df}}
+}
+\concept{tutorial}

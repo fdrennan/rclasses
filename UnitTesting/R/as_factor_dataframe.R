@@ -1,4 +1,5 @@
 #' as_factor_dataframe
+#' 
 #' @description Converts columns in a dataframe to factors
 #' @importFrom dplyr as_tibble
 #' @importFrom dplyr mutate_at
@@ -11,6 +12,9 @@
 #'
 #' @param df A dataframe to perform the operation on
 #' @param columns The columns you wish to convert to factors
+#' 
+#' @family tutorial
+#' 
 #' @export as_factor_dataframe
 as_factor_dataframe <- function(df = NULL, columns = NULL) {
 

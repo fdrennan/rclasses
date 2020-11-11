@@ -1,7 +1,7 @@
 # Libraries --------------------------------------------------------------
-library(UnitTesting)
-library(caret)
+library(UnitTesting) # not source('R/code/')
 
+# debug(as_factor_dataframe)
 model_output <- as_factor_dataframe(
   df = model_results_df,
   columns = c('pred', 'actual')

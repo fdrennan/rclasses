@@ -13,4 +13,9 @@ model_results_df
 \description{
 A toy dataset of model results
 }
+\seealso{
+Other tutorial: 
+\code{\link{as_factor_dataframe}()}
+}
+\concept{tutorial}
 \keyword{datasets}
