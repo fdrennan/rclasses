@@ -6,6 +6,7 @@
 #' @importFrom dplyr all_of
 #' @importFrom magrittr  %>%
 #' @importFrom magrittr not
+#' @importFrom forcats as_factor
 #' @examples
 #'
 #' as_factor_dataframe(model_results_df, c('pred', 'actual'))
@@ -14,7 +15,6 @@
 #' @param columns The columns you wish to convert to factors
 #' 
 #' @family tutorial
-#' 
 #' 
 #' @export as_factor_dataframe
 as_factor_dataframe <- function(df = NULL, columns = NULL) {
@@ -33,7 +33,7 @@ as_factor_dataframe <- function(df = NULL, columns = NULL) {
   df %>%
     mutate_at(
       all_of(columns),
-      as.factor
+      as_factor
     )
 
 }

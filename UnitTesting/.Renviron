@@ -1,1 +1,2 @@
 SECRET_CODE = 'password'
+SECRET_USERNAME = 'whoami'

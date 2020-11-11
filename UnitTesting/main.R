@@ -11,4 +11,28 @@ model_table <- table(model_output)
 
 model_summary <- confusionMatrix(model_table)
 
-model_summary
+data.frame(model_results = model_summary$byClass)
+
+
+# model_results
+# Sensitivity             0.82051282
+# Specificity             0.09090909
+# Pos Pred Value          0.76190476
+# Neg Pred Value          0.12500000
+# Precision               0.76190476
+# Recall                  0.82051282
+# F1                      0.79012346
+# Prevalence              0.78000000
+# Detection Rate          0.64000000
+# Detection Prevalence    0.84000000
+# Balanced Accuracy       0.45571096
+
+# actual
+# pred   one zero
+# one    2   14
+# zero  20   64
+
+# actual
+# pred   zero one
+# zero   64  20
+# one    14   2
