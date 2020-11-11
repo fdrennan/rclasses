@@ -7,3 +7,4 @@ testexamples
 ^README\.Rmd$
 .env
 images
+.Renviron
